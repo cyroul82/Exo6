@@ -73,6 +73,7 @@
     <Compile Include="MStagiaire.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tool.cs" />
     <EmbeddedResource Include="frmAjoutStagiaire.resx">
       <DependentUpon>frmAjoutStagiaire.cs</DependentUpon>
     </EmbeddedResource>

@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-
+using Exo7;
 namespace Exo6
 {
     public partial class frmAjoutStagiaire : Exo6.frmStagiaire
@@ -17,13 +17,24 @@ namespace Exo6
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            if (this.Controle())
+            if (Tool.Controle(txtNum.Text))
             {
-                if (this.Instancie())
+                if (Tool.Controle(txtCodePostal.Text))
                 {
-                    MStagiaire.Nstag += 1;
-                    this.DialogResult = DialogResult.OK;
+                    if (this.Instancie())
+                    {
+                        MStagiaire.Nstag += 1;
+                        this.DialogResult = DialogResult.OK;
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("code Postal Incorrect", "Erreur FrmAjoutStagiaire", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+            } else
+            {
+                MessageBox.Show("Matricule incorrect", "Erreur FrmAjoutStagiaire", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -32,52 +43,11 @@ namespace Exo6
             this.DialogResult = DialogResult.Cancel;
         }
 
-        private Boolean Controle()
-        {
-            Boolean code = true;
-            if (!(EstEntier(txtNum.Text)))
-            {
-                code = false;
-                MessageBox.Show("Matricule incorrect", "Erreur FrmAjoutStagiaire", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            if (!(EstEntier(txtCodePostal.Text)))
-            {
-                code = false;
-                MessageBox.Show("code Postal Incorrect", "Erreur FrmAjoutStagiaire", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return code;
-        }
-
-        private Boolean EstEntier(String s)
-        {
-            Int32 i;
-            Char c;
-            Boolean code = true;
-
-            if(s.Length < 10 && s.Length > 0)
-            {
-                for(i=0; i <s.Length; i++)
-                {
-                    c = s[i];
-                    if (!(Char.IsDigit(c)))
-                    {
-                        code = false;
-                    }
-                }
-            }
-            else
-            {
-                code = false;
-            }
-            return code;
-        }
-
         private Boolean Instancie()
         {
             MStagiaire stagiaire = new MStagiaire();
             try
             {
-
                 stagiaire.NumOsia = Int32.Parse(base.txtNum.Text.Trim());
                 stagiaire.Nom = base.txtName.Text;
                 stagiaire.Prenom = base.txtFirstName.Text;
@@ -86,7 +56,6 @@ namespace Exo6
                 stagiaire.Codepostal = base.txtCodePostal.Text.Trim();
                 Donnees.listStagiaire.Add(stagiaire);
                 return true;
-
             }
             catch
             {

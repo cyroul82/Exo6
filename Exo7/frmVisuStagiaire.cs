@@ -115,5 +115,11 @@ namespace Exo7
         {
             this.DialogResult = DialogResult.Cancel;
         }
+
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            Donnees.listStagiaire.Remove(stagiaire);
+            this.DialogResult = DialogResult.OK;
+        }
     }
 }

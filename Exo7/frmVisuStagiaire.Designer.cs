@@ -43,6 +43,7 @@
             this.btnSupprimer.TabIndex = 1;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // btnFermer
             // 
@@ -83,6 +84,7 @@
             this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.btnSupprimer);
             this.Name = "frmVisuStagiaire";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.frmVisuStagiaire_Load);
             this.Controls.SetChildIndex(this.btnSupprimer, 0);
             this.Controls.SetChildIndex(this.btnFermer, 0);
