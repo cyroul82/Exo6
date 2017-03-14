@@ -7,16 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Exo6;
 
-namespace Exo7
+namespace Exo6
 {
-    public partial class Form1 : Form
+    public partial class frmStagiaire : Form
     {
-        public Form1()
+        public frmStagiaire()
         {
             InitializeComponent();
         }
-
-
     }
 }

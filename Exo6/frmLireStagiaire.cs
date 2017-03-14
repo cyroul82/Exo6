@@ -51,12 +51,7 @@ namespace Exo6
             groupBoxMove.Visible = false;
         }
 
-        private void btnFirst_Click(object sender, EventArgs e)
-        {
-            iStag = 0;
-            afficheButtons();
-            afficheUnStagiaire(iStag);
-        }
+        
 
         private void afficheButtons()
         {
@@ -75,6 +70,40 @@ namespace Exo6
                 btnLast.Enabled = false;
                 btnNext.Enabled = false;
             }
+        }
+
+        private void btnFirst_Click(object sender, EventArgs e)
+        {
+            iStag = 0;
+            afficheButtons();
+            afficheUnStagiaire(iStag);
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            iStag -= 1;
+            afficheUnStagiaire(iStag);
+            afficheButtons();
+            
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            iStag += 1;
+            afficheUnStagiaire(iStag);
+            afficheButtons();
+        }
+
+        private void btnLast_Click(object sender, EventArgs e)
+        {
+            iStag = MStagiaire.Nstag - 1;
+            afficheUnStagiaire(iStag);
+            afficheButtons();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

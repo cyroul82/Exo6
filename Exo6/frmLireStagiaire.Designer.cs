@@ -64,6 +64,7 @@
             this.btnLast.TabIndex = 3;
             this.btnLast.Text = "Dernier >>";
             this.btnLast.UseVisualStyleBackColor = true;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // btnNext
             // 
@@ -74,6 +75,7 @@
             this.btnNext.TabIndex = 2;
             this.btnNext.Text = "Suivant >";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnPrevious
             // 
@@ -84,6 +86,7 @@
             this.btnPrevious.TabIndex = 1;
             this.btnPrevious.Text = "< Précedent";
             this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnFirst
             // 
@@ -115,6 +118,7 @@
             this.btnExit.TabIndex = 6;
             this.btnExit.Text = "Quitter";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnAdd
             // 

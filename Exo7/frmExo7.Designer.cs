@@ -1,6 +1,6 @@
 ﻿namespace Exo7
 {
-    partial class Form1
+    partial class frmExo7
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -34,13 +34,13 @@
             this.btnRechercer = new System.Windows.Forms.Button();
             this.btnTous = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.dataGridViewList = new System.Windows.Forms.DataGridView();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
+            this.grdStagiaires = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdStagiaires)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -59,7 +59,6 @@
             // lblRecherche
             // 
             this.lblRecherche.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblRecherche.AutoSize = true;
             this.lblRecherche.Location = new System.Drawing.Point(3, 8);
             this.lblRecherche.Name = "lblRecherche";
             this.lblRecherche.Size = new System.Drawing.Size(89, 13);
@@ -83,6 +82,7 @@
             this.btnRechercer.TabIndex = 2;
             this.btnRechercer.Text = "Rechercher";
             this.btnRechercer.UseVisualStyleBackColor = true;
+            this.btnRechercer.Click += new System.EventHandler(this.btnRechercer_Click);
             // 
             // btnTous
             // 
@@ -93,6 +93,7 @@
             this.btnTous.TabIndex = 3;
             this.btnTous.Text = "Tous";
             this.btnTous.UseVisualStyleBackColor = true;
+            this.btnTous.Click += new System.EventHandler(this.btnTous_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -107,16 +108,6 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(763, 29);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
-            // dataGridViewList
-            // 
-            this.dataGridViewList.AllowUserToOrderColumns = true;
-            this.dataGridViewList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewList.Location = new System.Drawing.Point(0, 29);
-            this.dataGridViewList.Name = "dataGridViewList";
-            this.dataGridViewList.Size = new System.Drawing.Size(763, 452);
-            this.dataGridViewList.TabIndex = 2;
-            // 
             // btnQuitter
             // 
             this.btnQuitter.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -126,6 +117,7 @@
             this.btnQuitter.TabIndex = 0;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = true;
+            this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
             // btnAjouter
             // 
@@ -136,6 +128,7 @@
             this.btnAjouter.TabIndex = 1;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // btnSupprimer
             // 
@@ -146,21 +139,34 @@
             this.btnSupprimer.TabIndex = 2;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
-            // Form1
+            // grdStagiaires
+            // 
+            this.grdStagiaires.AllowUserToAddRows = false;
+            this.grdStagiaires.AllowUserToOrderColumns = true;
+            this.grdStagiaires.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdStagiaires.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdStagiaires.Location = new System.Drawing.Point(0, 29);
+            this.grdStagiaires.Name = "grdStagiaires";
+            this.grdStagiaires.Size = new System.Drawing.Size(763, 452);
+            this.grdStagiaires.TabIndex = 2;
+            this.grdStagiaires.DoubleClick += new System.EventHandler(this.grdStagiaires_DoubleClick);
+            // 
+            // frmExo7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(763, 510);
-            this.Controls.Add(this.dataGridViewList);
+            this.Controls.Add(this.grdStagiaires);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmExo7";
+            this.Text = "Visualisation des stagiaires";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdStagiaires)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,7 +180,7 @@
         private System.Windows.Forms.Button btnRechercer;
         private System.Windows.Forms.Button btnTous;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.DataGridView dataGridViewList;
+        private System.Windows.Forms.DataGridView grdStagiaires;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.Button btnSupprimer;
